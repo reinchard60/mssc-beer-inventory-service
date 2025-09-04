@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-01T15:28:29-0400",
-    comments = "version: 1.3.0.Final, compiler: Eclipse JDT (IDE) 3.37.0.v20240206-1609, environment: Java 17.0.10 (Eclipse Adoptium)"
+    date = "2025-09-03T20:24:49-0400",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.28 (Eclipse Adoptium)"
 )
 @Component
 public class BeerInventoryMapperImpl implements BeerInventoryMapper {
@@ -27,12 +27,12 @@ public class BeerInventoryMapperImpl implements BeerInventoryMapper {
 
         BeerInventoryBuilder beerInventory = BeerInventory.builder();
 
-        beerInventory.beerId( beerInventoryDTO.getBeerId() );
-        beerInventory.createdDate( dateMapper.asTimestamp( beerInventoryDTO.getCreatedDate() ) );
         beerInventory.id( beerInventoryDTO.getId() );
+        beerInventory.createdDate( dateMapper.asTimestamp( beerInventoryDTO.getCreatedDate() ) );
         beerInventory.lastModifiedDate( dateMapper.asTimestamp( beerInventoryDTO.getLastModifiedDate() ) );
-        beerInventory.quantityOnHand( beerInventoryDTO.getQuantityOnHand() );
+        beerInventory.beerId( beerInventoryDTO.getBeerId() );
         beerInventory.upc( beerInventoryDTO.getUpc() );
+        beerInventory.quantityOnHand( beerInventoryDTO.getQuantityOnHand() );
 
         return beerInventory.build();
     }
@@ -45,12 +45,12 @@ public class BeerInventoryMapperImpl implements BeerInventoryMapper {
 
         BeerInventoryDtoBuilder beerInventoryDto = BeerInventoryDto.builder();
 
-        beerInventoryDto.beerId( beerInventory.getBeerId() );
-        beerInventoryDto.createdDate( dateMapper.asOffsetDateTime( beerInventory.getCreatedDate() ) );
         beerInventoryDto.id( beerInventory.getId() );
+        beerInventoryDto.createdDate( dateMapper.asOffsetDateTime( beerInventory.getCreatedDate() ) );
         beerInventoryDto.lastModifiedDate( dateMapper.asOffsetDateTime( beerInventory.getLastModifiedDate() ) );
-        beerInventoryDto.quantityOnHand( beerInventory.getQuantityOnHand() );
+        beerInventoryDto.beerId( beerInventory.getBeerId() );
         beerInventoryDto.upc( beerInventory.getUpc() );
+        beerInventoryDto.quantityOnHand( beerInventory.getQuantityOnHand() );
 
         return beerInventoryDto.build();
     }
